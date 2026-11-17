@@ -3,9 +3,10 @@
   const room = document.querySelector('.office-room');
   if (!world || !room) return;
 
-  const compactScene = window.matchMedia('(max-width: 1440px)').matches
+  const compactScene = window.matchMedia('(max-width: 1920px)').matches
     || (navigator.deviceMemory && navigator.deviceMemory <= 8)
-    || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 6);
+    || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 8);
+  world.classList.toggle('is-compact', compactScene);
 
   const plane = (className, x, y, z, width, height, options = {}) => {
     const item = document.createElement('div');
@@ -229,7 +230,7 @@
     } else {
       const elapsed = lastFrameTime ? Math.min(50, time - lastFrameTime) : 16.7;
       // Follow the scroll target sooner so camera easing does not feel like scroll lag.
-      const smooth = 1 - Math.exp(-elapsed / 58);
+      const smooth = 1 - Math.exp(-elapsed / 42);
       for (const key of Object.keys(cameraNow)) cameraNow[key] += (cameraTarget[key] - cameraNow[key]) * smooth;
       pointerNowX += (pointerX - pointerNowX) * smooth;
       pointerNowY += (pointerY - pointerNowY) * smooth;
@@ -237,8 +238,7 @@
     lastFrameTime = time;
     room.style.transform = `scale(${cameraNow.zoom}) rotateZ(${-cameraNow.roll}deg) rotateX(${-cameraNow.pitch - pointerNowY * .65}deg) rotateY(${-cameraNow.yaw - pointerNowX * 1.05}deg) translate3d(${-cameraNow.x - pointerNowX * 1.6}vw,${-cameraNow.y - pointerNowY * .65}vh,${-cameraNow.z}vw)`;
     const cameraMoving = Object.keys(cameraNow).some((key) => Math.abs(cameraTarget[key] - cameraNow[key]) > 0.022);
-    const pointerMoving = Math.abs(pointerX - pointerNowX) + Math.abs(pointerY - pointerNowY) > 0.003;
-    if (!once && !reduceMotion.matches && (cameraMoving || pointerMoving)) {
+    if (!once && !reduceMotion.matches && cameraMoving) {
       room.classList.add('is-moving');
       scheduleCamera();
     } else {
@@ -249,13 +249,6 @@
 
   window.addEventListener('scroll', updateCameraTarget, { passive: true });
   window.addEventListener('resize', () => { measureStops(); updateCameraTarget(); }, { passive: true });
-  window.addEventListener('pointermove', (event) => {
-    if (compactScene || reduceMotion.matches || event.pointerType === 'touch') return;
-    pointerX = (event.clientX / window.innerWidth - .5) * 1.1;
-    pointerY = (event.clientY / window.innerHeight - .5) * -1.1;
-    scheduleCamera();
-  }, { passive: true });
-  document.addEventListener('mouseleave', () => { pointerX = 0; pointerY = 0; scheduleCamera(); }, { passive: true });
   document.addEventListener('visibilitychange', () => {
     active = document.visibilityState === 'visible';
     if (active) scheduleCamera();
