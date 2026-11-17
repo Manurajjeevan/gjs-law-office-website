@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="GJS firm mark">
+  <rect x="5" y="5" width="90" height="90" rx="45" fill="#15362f" stroke="#c8a96f" stroke-width="2"/>
+  <path d="M28 33h44M34 33l4-12h24l4 12M39 21V13m11 8V13m11 8V13M39 37v16m11-16v16m11-16v16M31 56h38M25 62h50M33 68h34" fill="none" stroke="#d5bd8b" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50" y="86" text-anchor="middle" fill="#f8f6ef" font-family="Georgia,serif" font-size="17" letter-spacing="2">GJS</text>
+</svg>
+
