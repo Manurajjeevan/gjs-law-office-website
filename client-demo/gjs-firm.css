@@ -352,3 +352,39 @@ body.has-pointer .cursor-aura { opacity:1; }
   .cursor-aura { display:none; }
 }
 
+/* Keep the moving chamber as atmosphere while giving reading areas a clean foreground. */
+.hero { isolation:isolate; }
+.hero::before {
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:radial-gradient(ellipse at 50% 47%,rgba(5,5,5,.72) 0%,rgba(5,5,5,.42) 38%,rgba(5,5,5,.1) 74%,transparent 100%);
+}
+.hero-copy, .hero-index { position:relative; z-index:2; }
+.intro, .practice-section, .people-section, .quote-section, .approach-section,
+.insights-section, .faq-section, .contact-section {
+  background:rgba(8,8,8,.95)!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+  isolation:isolate;
+}
+.chamber-gallery { background:#0a0a0a!important; isolation:isolate; }
+.practice-card, .people-card, .firm-lawyer {
+  background:rgba(13,12,11,.96)!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+.practice-card:hover, .people-card:hover, .firm-lawyer:hover { background:rgba(20,17,13,.98)!important; }
+.location-panel {
+  display:grid; gap:12px; width:min(100%,560px); margin-top:36px;
+  padding:24px 28px; border:1px solid rgba(201,166,107,.38);
+  background:rgba(14,12,10,.96)!important;
+}
+.location-panel > * { min-width:0; margin:0; }
+.location-label { line-height:1.4; }
+.location-value { line-height:1.25; }
+.location-note { max-width:48ch; line-height:1.7; }
+.maps-link { justify-self:start; margin-top:7px; }
+@media (max-width:760px) {
+  .hero::before { background:radial-gradient(ellipse at center,rgba(5,5,5,.66),rgba(5,5,5,.22) 72%,transparent); }
+  .location-panel { margin-top:26px; padding:20px 18px; }
+}
+
