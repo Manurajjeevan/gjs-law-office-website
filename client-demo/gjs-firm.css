@@ -1,0 +1,225 @@
+:root {
+  --ink: #18312b;
+  --paper: #f3efe5;
+  --bone: #f8f6ef;
+  --acid: #c8a96f;
+  --muted: #767f79;
+  --line: rgba(24,49,43,.18);
+  --line-light: rgba(248,246,239,.24);
+  --gold: #c8a96f;
+  --navy: #15362f;
+  --pine: #15362f;
+  --forest: #102a24;
+  --copper: #a86f50;
+}
+
+body { background: var(--forest); color: var(--ink); }
+.page-grain { opacity: .055; }
+.site-header { background: rgba(243,239,229,.96); border-color: rgba(21,54,47,.14); }
+.wordmark { gap: 10px; white-space: nowrap; letter-spacing: .12em; color: var(--pine); }
+.wordmark > span { display: grid; gap: 2px; font: 600 13px/1 var(--sans); letter-spacing: .15em; }
+.wordmark small { font: 500 7px/1.2 var(--mono); letter-spacing: .1em; }
+.brand-mark { display: block; width: 34px; height: 34px; flex: 0 0 34px; }
+.nav-contact { color: var(--pine); border-color: var(--gold); }
+.nav-contact span, .text-link span { color: var(--copper); }
+.hero { color: var(--bone); background: transparent; }
+.hero-copy { max-width: 850px; }
+.hero h1 { max-width: 780px; font-size: clamp(66px, 8vw, 118px); letter-spacing: -.045em; }
+.hero h1 em { color: #d5bd8b; }
+.eyebrow, .hero-bottomline p { color: rgba(248,246,239,.86); }
+.status-dot { background: #d0b680; box-shadow: 0 0 10px rgba(208,182,128,.42); }
+.hero .round-link { border-color: rgba(248,246,239,.62); color: var(--bone); }
+.hero .round-link:hover { background: var(--gold); color: var(--forest); border-color: var(--gold); }
+.hero-index { color: rgba(248,246,239,.76); }
+.hero-index span { color: #d5bd8b; }
+
+.intro, .people-section, .quote-section, .insights-section {
+  background: rgba(243,239,229,.94);
+  color: var(--pine);
+}
+.intro h2 em, .quote-section h2 em, .insights-content h2 em,
+.people-heading h2 em, .faq-heading h2 em { color: var(--copper); }
+.section-kicker { color: #68736d; }
+.section-kicker .rule { background: rgba(21,54,47,.23); }
+.large-copy { color: #294c42; }
+.intro-copy > p:not(.large-copy), .people-heading > p, .profile-summary { color: #59655f; }
+.numbers-row strong { color: var(--copper); }
+.numbers-row span { color: #69736d; }
+
+.practice-section, .approach-section { background: rgba(16,42,36,.95); color: var(--bone); }
+.practice-section:before { border-color: rgba(200,169,111,.12); box-shadow: 0 0 0 60px rgba(0,0,0,0), 0 0 0 120px rgba(200,169,111,.035); }
+.light, .approach-section .section-kicker { color: rgba(248,246,239,.74); }
+.light .rule, .approach-section .section-kicker .rule { background: rgba(248,246,239,.24); }
+.practice-heading h2 em, .approach-heading h2 em { color: #d5bd8b; }
+.practice-heading > p, .approach-heading > p { color: rgba(248,246,239,.75); }
+.practice-card {
+  min-height: 310px;
+  border-color: rgba(248,246,239,.2);
+  background: rgba(6,22,18,.28);
+  transition: transform .35s ease, border-color .28s ease, background .28s ease;
+}
+.practice-card:hover { border-color: rgba(213,189,139,.72); background: rgba(200,169,111,.055); }
+.practice-card h3 { color: var(--bone); }
+.practice-card > p { color: rgba(248,246,239,.76); }
+.practice-card .card-index { color: #d5bd8b; }
+.practice-card .card-art { height: 128px; }
+.practice-glyph {
+  display: grid; place-items: center; width: 84px; height: 84px;
+  border: 1px solid rgba(213,189,139,.7); border-radius: 50%; color: #d5bd8b;
+  font: 46px/1 var(--serif); box-shadow: 0 0 30px rgba(200,169,111,.08), inset 0 0 24px rgba(200,169,111,.05);
+}
+.card-arrow { color: #d5bd8b; }
+
+.people-section { padding-top: 100px; padding-bottom: 108px; }
+.people-heading h2 { color: var(--pine); font: 400 clamp(54px,6vw,86px)/.92 var(--serif); letter-spacing: -.045em; }
+.people-card { min-height: 270px; padding: 26px; border: 1px solid rgba(21,54,47,.17); background: rgba(255,255,255,.42); color: var(--pine); }
+.people-card .card-index, .firm-lawyer .card-index { color: #896548; }
+.people-card h3 { color: var(--pine); font: 400 34px/1.02 var(--serif); }
+.people-card p { color: #5d6761; font-size: 12px; line-height: 1.75; max-width: 360px; }
+.service-grid, .people-section .service-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.service-mark { display: block; margin: 25px 0 18px; color: var(--copper); font: 31px var(--serif); }
+.people-line { background: linear-gradient(90deg,var(--gold),transparent); }
+.firm-note { max-width: 900px; color: rgba(24,49,43,.68); font: 11px/1.7 var(--sans); margin: 26px 0 0; }
+.practice-section .firm-note, .insights-content .firm-note { color: rgba(248,246,239,.7); }
+
+.quote-section { padding-top: 98px; padding-bottom: 108px; }
+.quote-section > .people-heading { margin-top: 54px; }
+.firm-team-grid { display: grid; gap: 18px; margin-top: 42px; }
+.firm-lawyer { display: grid; grid-template-columns: 140px minmax(0,1fr); gap: 28px; align-items: center; padding: 26px; border: 1px solid rgba(21,54,47,.17); background: rgba(255,255,255,.42); }
+.firm-lawyer h3 { color: var(--pine); font: 400 clamp(30px,4vw,46px)/.98 var(--serif); margin: 13px 0 11px; }
+.firm-lawyer p { max-width: 700px; color: #59655f; font: 13px/1.72 var(--sans); margin: 0 0 13px; }
+.firm-lawyer .text-link { margin-top: 10px; }
+.lawyer-monogram { display: grid; place-items: center; width: 118px; height: 118px; border: 1px solid rgba(168,111,80,.6); border-radius: 50%; color: var(--copper); font: 400 40px/1 var(--serif); background: radial-gradient(circle,rgba(200,169,111,.13),rgba(21,54,47,.025) 68%); }
+.firm-lawyer .profile-portrait { margin: 0; width: 120px; }
+.firm-lawyer .profile-portrait img { width: 90px; height: 120px; object-fit: cover; object-position: center top; }
+.firm-lawyer--team { grid-template-columns: 140px minmax(0,1fr); }
+.profile-portrait figcaption { color: #69736d; }
+.profile-portrait a { color: #79583f; }
+.fact-note { color: #747b75; }
+
+.approach-section { padding-top: 98px; padding-bottom: 108px; }
+.approach-heading { margin: 58px 0 58px; }
+.approach-heading h2 { color: var(--bone); }
+.approach-grid { border-top-color: rgba(248,246,239,.24); }
+.approach-grid article, .approach-grid article + article { border-bottom-color: rgba(248,246,239,.24); }
+.approach-grid article + article { border-left-color: rgba(248,246,239,.2); }
+.approach-grid article > span { color: #d5bd8b; }
+.approach-grid h3 { color: var(--bone); }
+.approach-grid p { color: rgba(248,246,239,.72); }
+
+.insights-section { padding-top: 96px; padding-bottom: 108px; }
+.insights-content { max-width: 780px; margin: 76px auto 0; }
+.insights-content .eyebrow { color: #63716a; }
+.insights-content h2 { color: var(--pine); font: 400 clamp(56px,7vw,96px)/.92 var(--serif); letter-spacing: -.04em; margin: 28px 0 21px; }
+.insights-content > p:not(.eyebrow) { max-width: 600px; color: #59655f; font-size: 14px; line-height: 1.8; }
+.insights-topics a { display: inline-flex; color: var(--pine); border: 1px solid rgba(21,54,47,.3); border-radius: 999px; padding: 10px 14px; text-decoration: none; font: 10px/1 var(--mono); }
+.insights-topics a:hover { border-color: var(--copper); color: var(--copper); }
+
+.faq-section { padding-top: 100px; padding-bottom: 108px; background: rgba(243,239,229,.95); color: var(--pine); }
+.faq-heading h2 { color: var(--pine); }
+.faq-heading > p { color: #5d6761; }
+.faq-list { border-top-color: rgba(21,54,47,.22); }
+.faq-item { border-bottom-color: rgba(21,54,47,.18); }
+.faq-item summary { color: var(--pine); }
+.faq-item summary::after { color: var(--copper); }
+.faq-item p { color: #59655f; }
+.faq-item summary:focus-visible { outline-color: var(--copper); }
+
+.contact-section { background: rgba(16,42,36,.97); color: var(--bone); }
+.contact-content h2 { color: var(--bone); }
+.contact-content h2 em { color: #d5bd8b; }
+.location-label { color: #d5bd8b; }
+.location-note, .site-footer { color: rgba(248,246,239,.73); }
+.site-footer { border-top-color: rgba(248,246,239,.23); }
+.site-footer .wordmark { color: var(--bone); }
+
+/* Return to the handcrafted CSS office: dark green stone, walnut and brass. */
+.office-world { background: #0b1815; }
+.office-world-shade {
+  background: linear-gradient(90deg,rgba(7,17,14,.6),rgba(7,17,14,.12) 47%,rgba(7,17,14,.46)),linear-gradient(180deg,rgba(7,17,14,.43),transparent 23%,rgba(7,17,14,.15) 66%,rgba(7,17,14,.7));
+  box-shadow: inset 0 0 150px rgba(0,0,0,.4);
+}
+.office-world-shade::after { background: linear-gradient(108deg,transparent 35%,rgba(200,169,111,.13) 43%,transparent 52%); }
+.office-world-shade::after { animation: none; transform: none; mix-blend-mode: normal; }
+.office-room { will-change: auto; }
+.office-room.is-moving { will-change: transform; }
+.office-floor { background-color: #10231e; background-image: linear-gradient(90deg,transparent 0 98%,rgba(200,169,111,.34) 98.2% 98.7%,transparent 99%),linear-gradient(0deg,transparent 0 98%,rgba(200,169,111,.29) 98.2% 98.7%,transparent 99%),radial-gradient(ellipse at 50% 8%,rgba(200,169,111,.22),transparent 55%),linear-gradient(145deg,#263932,#10231e 35%,#1a3029 70%,#0b1815); }
+.office-ceiling { background: repeating-linear-gradient(90deg,#14241f 0 8vw,#2c4036 8.3vw 8.7vw,#13231e 9vw 17vw); }
+.office-wall { background: repeating-linear-gradient(90deg,rgba(200,169,111,.17) 0 .25vw,transparent .3vw 12vw),linear-gradient(90deg,#111f1a,#263b30 15%,#14231e 42%,#2b3e32 70%,#121f1a); }
+.office-back-wall { background: radial-gradient(ellipse at 52% 37%,rgba(168,111,80,.23),transparent 38%),repeating-linear-gradient(90deg,rgba(200,169,111,.14) 0 .2vw,transparent .25vw 12vw),linear-gradient(120deg,#14231e,#293c31 48%,#0d1b17); }
+.office-box-face--front { background: linear-gradient(145deg,#2b4035,#152820 52%,#20362d); }
+.office-box-face--back, .office-box-face--bottom { background: #0d1c17; }
+.office-box-face--left, .office-box-face--right { background: linear-gradient(90deg,#13221c,#34463a,#192b23); }
+.office-box-face--top { background: linear-gradient(145deg,#8b795b,#293d32 54%,#79684d); }
+.office-box--marble .office-box-face--front, .office-box--marble .office-box-face--top { background-color: #1e2c26; background-image: linear-gradient(124deg,transparent 0 38%,rgba(226,218,198,.3) 38.3%,transparent 39%,transparent 61%,rgba(200,169,111,.23) 61.3%,transparent 62%),linear-gradient(145deg,#36463b,#15241e 48%,#29382e); }
+.office-box--brass .office-box-face { background: linear-gradient(90deg,#74552f,#ddc18a 25%,#80613c 49%,#dfc58f 70%,#624824); }
+.office-box--leather .office-box-face--front, .office-box--leather .office-box-face--top { background: radial-gradient(ellipse at 30% 25%,#47584a,#1b2e25 62%,#0b1815); }
+.office-box--book-gold .office-box-face--front, .office-box--book-dark .office-box-face--front { background: linear-gradient(90deg,#19271f,#c8a96f 18%,#17251e 42%,#987443 74%,#132119); }
+.office-box--walnut .office-box-face--front { background: repeating-linear-gradient(90deg,#14231d 0 1.1vw,#344237 1.2vw 1.35vw,#182820 1.5vw 2.6vw); }
+.office-box--stone .office-box-face { background: linear-gradient(130deg,#4f5b50,#c0b8a3 32%,#788276 56%,#2b3c32); }
+.office-books { border-bottom-color: var(--gold); background: repeating-linear-gradient(90deg,#17241d 0 4.4%,#b79559 4.5% 5.2%,#203329 5.3% 10.2%,#c8a96f 10.3% 11%,#19291f 11.1% 16.4%,#82643d 16.5% 17.1%); }
+.office-nameplate { background: linear-gradient(120deg,#c8a96f,#755833 28%,#183128 55%,#b28d53); border-color: #dfc891; color: #fff9ec; }
+
+@media (max-width: 1020px) {
+  .main-nav { gap: 14px; margin-left: 18px; }
+  .main-nav a { font-size: 9px; }
+  .nav-contact { display: none; }
+  .menu-toggle { display: grid; align-content: center; gap: 5px; padding: 5px; background: none; border: 0; }
+  .menu-toggle span { width: 18px; height: 1px; background: var(--pine); }
+}
+@media (max-width: 900px) {
+  .practice-grid, .people-section .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 760px) {
+  .site-header { padding-inline: 20px; }
+  .main-nav { top: 70px; background: var(--paper); }
+  .main-nav a { font-size: 12px; }
+  .hero-copy { min-height: 520px; padding: 58px 22px 35px; }
+  .hero h1 { font-size: clamp(62px,14vw,88px); margin-top: 38px; }
+  .hero-bottomline p { max-width: 290px; font-size: 12px; }
+  .intro,.people-section,.quote-section,.insights-section { background: rgba(243,239,229,.97); }
+  .practice-section { background: rgba(16,42,36,.98); }
+  .practice-grid, .people-section .service-grid { grid-template-columns: 1fr 1fr; }
+  .practice-card { min-height: 276px; padding: 17px; }
+  .practice-glyph { width: 70px; height: 70px; font-size: 38px; }
+  .firm-lawyer,.firm-lawyer--team { grid-template-columns: 72px minmax(0,1fr); gap: 18px; padding: 18px; }
+  .lawyer-monogram { width: 68px; height: 68px; font-size: 27px; }
+  .firm-lawyer .profile-portrait { width: 68px; }
+  .firm-lawyer .profile-portrait img { width: 68px; height: 92px; }
+  .firm-lawyer .profile-portrait figcaption { width: 74px; font-size: 7px; }
+  .profile-layout { grid-template-columns: 1fr; gap: 42px; }
+  .approach-grid { grid-template-columns: 1fr; }
+  .approach-grid article { min-height: auto; padding: 20px 0 23px; }
+  .approach-grid article + article { padding-left: 0; border-left: 0; }
+  .approach-grid h3 { margin-top: 18px; }
+  .site-footer { grid-template-columns: 1fr 1fr; }
+  .office-world { perspective: 185vw; }
+  .office-world-shade { box-shadow: inset 0 0 90px rgba(0,0,0,.34); }
+}
+@media (max-width: 520px) {
+  .wordmark > span { font-size: 10px; }
+  .wordmark small { font-size: 6px; }
+  .hero h1 { font-size: clamp(54px,13.5vw,72px); }
+  .hero-copy { min-height: 485px; }
+  .practice-grid, .people-section .service-grid { grid-template-columns: 1fr; }
+  .practice-card { min-height: 260px; }
+  .practice-card .card-art { height: 105px; }
+  .profile-facts > div { grid-template-columns: 1fr; gap: 8px; }
+  .location-value { font-size: 21px; }
+  .site-footer { grid-template-columns: 1fr; gap: 14px; }
+  .site-footer > span:nth-child(n) { text-align: left; }
+}
+@media (max-width: 760px) {
+  .office-world-shade::after { animation: none; }
+  .office-box-face { box-shadow: none !important; }
+  .office-light-strip,.office-mote { filter: none; }
+  .office-mote { display: none; }
+  .office-leaf { animation: none; box-shadow: none; }
+  .office-books { box-shadow: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .practice-card { transition: none; }
+  .office-room.is-moving { will-change: auto; }
+}
+
