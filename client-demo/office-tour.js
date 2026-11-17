@@ -3,7 +3,9 @@
   const room = document.querySelector('.office-room');
   if (!world || !room) return;
 
-  const compactScene = window.matchMedia('(max-width: 760px)').matches || (navigator.deviceMemory && navigator.deviceMemory <= 4);
+  const compactScene = window.matchMedia('(max-width: 1440px)').matches
+    || (navigator.deviceMemory && navigator.deviceMemory <= 8)
+    || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 6);
 
   const plane = (className, x, y, z, width, height, options = {}) => {
     const item = document.createElement('div');
@@ -226,14 +228,15 @@
       pointerNowY = pointerY;
     } else {
       const elapsed = lastFrameTime ? Math.min(50, time - lastFrameTime) : 16.7;
-      const smooth = 1 - Math.exp(-elapsed / 95);
+      // Follow the scroll target sooner so camera easing does not feel like scroll lag.
+      const smooth = 1 - Math.exp(-elapsed / 58);
       for (const key of Object.keys(cameraNow)) cameraNow[key] += (cameraTarget[key] - cameraNow[key]) * smooth;
       pointerNowX += (pointerX - pointerNowX) * smooth;
       pointerNowY += (pointerY - pointerNowY) * smooth;
     }
     lastFrameTime = time;
     room.style.transform = `scale(${cameraNow.zoom}) rotateZ(${-cameraNow.roll}deg) rotateX(${-cameraNow.pitch - pointerNowY * .65}deg) rotateY(${-cameraNow.yaw - pointerNowX * 1.05}deg) translate3d(${-cameraNow.x - pointerNowX * 1.6}vw,${-cameraNow.y - pointerNowY * .65}vh,${-cameraNow.z}vw)`;
-    const cameraMoving = Object.keys(cameraNow).some((key) => Math.abs(cameraTarget[key] - cameraNow[key]) > 0.012);
+    const cameraMoving = Object.keys(cameraNow).some((key) => Math.abs(cameraTarget[key] - cameraNow[key]) > 0.022);
     const pointerMoving = Math.abs(pointerX - pointerNowX) + Math.abs(pointerY - pointerNowY) > 0.003;
     if (!once && !reduceMotion.matches && (cameraMoving || pointerMoving)) {
       room.classList.add('is-moving');
