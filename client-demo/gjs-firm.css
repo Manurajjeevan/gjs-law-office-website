@@ -454,3 +454,70 @@ body.has-pointer .cursor-aura { opacity:1; }
   .voice-card h3 { margin-top:22px; }
 }
 
+/* Clearer hero hierarchy and a more visible sense of depth in the office. */
+.hero {
+  height:min(900px,100svh); min-height:700px; padding-left:0;
+}
+.hero-copy {
+  width:100%; max-width:none; height:100%; min-height:0;
+  padding:100px 8vw 78px; align-items:center; justify-content:center; text-align:center;
+}
+.hero-copy .eyebrow { justify-content:center; margin-bottom:26px; letter-spacing:.18em; }
+.hero h1 {
+  display:grid; justify-items:center; gap:12px; max-width:100%; margin:0 auto 17px;
+  font-size:unset; line-height:1; letter-spacing:0; text-wrap:balance;
+}
+.hero-title-mark {
+  display:block; color:#f3efe7; font:400 clamp(82px,10vw,132px)/.8 var(--serif);
+  letter-spacing:.035em; text-shadow:0 2px 28px rgba(0,0,0,.36);
+}
+.hero-title-name {
+  display:block; color:#d8b477; font:italic 400 clamp(44px,6.05vw,82px)/1.02 var(--serif);
+  letter-spacing:.018em; white-space:nowrap; text-shadow:0 2px 24px rgba(0,0,0,.32);
+}
+.hero-index {
+  position:static; display:inline-flex; align-items:center; justify-content:center;
+  width:max-content; margin:0 auto 24px; padding:8px 12px; transform:none;
+  border:1px solid rgba(201,166,107,.28); background:rgba(7,7,7,.22);
+  color:#e3c68f; font:8px/1 var(--mono); letter-spacing:.18em;
+}
+.hero-bottomline { justify-content:center; align-items:center; gap:24px; max-width:680px; margin:0 auto; }
+.hero-bottomline p { max-width:520px; text-align:center; }
+.hero::before {
+  background:radial-gradient(ellipse at 50% 47%,rgba(5,5,5,.34) 0%,rgba(5,5,5,.18) 38%,rgba(5,5,5,.035) 76%,transparent 100%);
+}
+.office-world-shade {
+  background:linear-gradient(90deg,rgba(5,5,5,.38),rgba(7,6,5,.035) 48%,rgba(5,5,5,.24)),
+    linear-gradient(180deg,rgba(4,4,4,.14),transparent 23%,rgba(5,5,5,.08) 68%,rgba(4,4,4,.48));
+  box-shadow:inset 0 0 130px rgba(0,0,0,.28);
+}
+.office-world-shade::after { opacity:.2; }
+.intro, .practice-section, .people-section, .quote-section, .approach-section,
+.insights-section, .faq-section, .contact-section, .voices-section {
+  background:rgba(8,8,8,.86)!important;
+}
+.chamber-gallery { background:rgba(8,8,8,.88)!important; }
+.office-world.is-compact .office-box-face,
+.office-world.is-compact .office-floor,
+.office-world.is-compact .office-wall,
+.office-world.is-compact .office-back-wall,
+.office-world.is-compact .office-ceiling { box-shadow:none!important; }
+.office-world.is-compact .office-leaf,
+.office-world.is-compact .office-world-shade::after { animation:none!important; }
+.office-world.is-compact .office-mote { display:none!important; }
+.office-world.is-compact .office-light-strip { filter:none!important; box-shadow:none!important; }
+@media (max-width:760px) {
+  .hero { height:760px; min-height:760px; }
+  .hero-copy { min-height:0; padding:96px 20px 48px; }
+  .hero-copy .eyebrow { margin-bottom:24px; font-size:8px; }
+  .hero-title-mark { font-size:clamp(78px,20vw,108px); }
+  .hero-title-name {
+    max-width:calc(100vw - 40px); white-space:normal;
+    font-size:clamp(42px,9.2vw,60px); line-height:.98;
+  }
+  .hero-index { margin-bottom:22px; }
+  .hero-bottomline { gap:16px; }
+  .hero-bottomline p { font-size:11px; }
+  .hero::before { background:radial-gradient(ellipse at center,rgba(5,5,5,.3),rgba(5,5,5,.08) 72%,transparent); }
+}
+
